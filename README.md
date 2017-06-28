@@ -4,8 +4,8 @@
 ![](header.png)
 
 ## The system
+The system is divided into **app** *related to the server side* and **app_web** *related to the client side*.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ```
 ├── app
 │   ├── controller
@@ -32,42 +32,22 @@ These instructions will get you a copy of the project up and running on your loc
     └── templates
 ```
 ### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
+The installation is easy, just clone the project into the *apache main root* directory of your server.
 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
+eg. 
+$ cd /var/www/
+$ git clone https://github.com/Rezyak/LUS-Project-2.git
 
 ```
-Give an example
-```
 
-### And coding style tests
+## Running
+Just open in the browser *127.0.0.1* or *127.0.0.1/index.html*.
 
-Explain what these tests test and why
-
-```
-Give an example
-```
+Then there are 2 Fab-Buttons:
+* the one with a microphone is used to speak with the system
+* the other one is optional, it can be used to query the database *as an alternative to speech recognition*
+* when the system recognizes something, it will appear a *chip*: it can be removed from the system memory
 
 ## Built With
 
