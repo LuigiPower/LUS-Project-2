@@ -1,6 +1,6 @@
 # Dialog System
-> A dialog system for movie search, Eduard Caizer.
-> [example](https://youtu.be/eQBfqXuSO_k) - A video with some examples
+> A dialog system for movie search, Eduard Caizer.  
+[example](https://youtu.be/eQBfqXuSO_k) - A video with some examples
 
 ![](header.png)
 
