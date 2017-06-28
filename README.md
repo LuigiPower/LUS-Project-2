@@ -7,22 +7,29 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 ```
-project
-│   README.md
-│   file001.txt    
-│
-└───folder1
-│   │   file011.txt
-│   │   file012.txt
-│   │
-│   └───subfolder1
-│       │   file111.txt
-│       │   file112.txt
-│       │   ...
-│   
-└───folder2
-    │   file021.txt
-    │   file022.txt
+├── app
+│   ├── controller
+│   │   ├── concept
+│   │   ├── database
+│   │   ├── init
+│   │   ├── intent
+│   │   └── partial
+│   ├── lib
+│   │   └── models
+│   └── model
+│       ├── classifier
+│       ├── database
+│       ├── dialogManager
+│       ├── responseManager
+│       ├── responseUtil
+│       └── slu
+└── app_web
+    ├── components
+    ├── controllers
+    ├── css
+    ├── icons
+    ├── services
+    └── templates
 ```
 ### Installing
 
