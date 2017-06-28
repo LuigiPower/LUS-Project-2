@@ -1,0 +1,6 @@
+
+    <md-input-container layout="column">
+      <label>{{$ctrl.who.label}}</label>
+      <textarea type="text" ng-readonly="{{$ctrl.who.readonly}}" ng-model="$ctrl.who.text" placeholder="{{$ctrl.who.placeholder}}"  ng-focus="$ctrl.who.focus" ng-keyup="$event.keyCode == 13 ? $ctrl.onEnterPressed() : null">
+      </textarea>
+    </md-input-container>

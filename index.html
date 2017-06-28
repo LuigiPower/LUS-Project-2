@@ -1,0 +1,80 @@
+<!doctype html>
+<html ng-app="app">
+  <head>
+    <title>Movie System</title>
+   
+  <!-- AngularJS Material CSS now available via Google CDN; version 1.1.4 used here -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.css">
+   <link rel="stylesheet" href="app_web/css/app.css" />
+  </head>
+  <body>
+
+	<md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <h2 flex md-truncate>Lus Dialog System</h2>
+      </div>
+    </md-toolbar>
+
+
+
+	<md-content layout-margin layout-padding layout="column" ng-controller="inputOutput as io">
+
+   <intent-concepts layout="column" layout-align="center center" flex list="io.tempChips" on-removed="io.onTempChipsRemoved"></intent-concepts>
+
+		<md-content layout-margin layout-padding layout="row">
+	  		<dialog-text who="io.user" layout="column" flex="60"></dialog-text>
+	  		<speech layout="column" layout-align="center left" on-pressed="io.onMicPressed()" icon=io.speechIcon></speech>
+	  		<speech layout="column" layout-align="center left" on-pressed="io.onDBPressed()" icon=io.computeIcon></speech>
+		</md-content>
+    
+
+
+		<md-content layout-margin layout-padding layout="row">
+	  		<dialog-text who="io.system" layout="column" flex="60"></dialog-text>
+			<intent-concepts layout="column" layout-align="center center" flex list="io.chips" on-removed="io.onChipsRemoved"></intent-concepts>
+		</md-content>
+
+    <md-content class="md-padding" layout-xs="column" layout="column" ng-repeat="(dbkey, db) in io.db">
+      <div flex-xs flex-gt-xs="50" layout="column">
+        <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+          <md-card-title ng-repeat="(intentkey, intent) in io.intents">
+            <md-card-title-text>
+              <span class="md-headline"> <strong>{{intent}}: </strong> {{db[intent]}}</span>
+              <span class="md-subhead" ng-repeat="(conceptkey, concept) in io.concepts"> <strong>{{concept}}: <strong>{{db[concept]}}</span>
+            </md-card-title-text>
+            <md-card-title-media>
+              <strong>{{db['title']}}</strong>
+            </md-card-title-media>
+          </md-card-title>
+          <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="io.openLink(dbkey )">imdb</md-button>
+          </md-card-actions>
+        </md-card>
+      </div>
+    </md-content>
+	</md-content>
+
+ 
+
+
+ 	<!-- AngularJS Material Dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.11/angular-aria.js"></script>
+
+
+    <!-- AngularJS Material Javascript now available via Google CDN; version 1.1.4 used here -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+  	<script type="text/javascript" src="app_web/app.js"></script>
+    <script type="text/javascript" src="app_web/components/dialog-text.component.js"></script>  
+    <script type="text/javascript" src="app_web/components/speech.component.js"></script>
+    <script type="text/javascript" src="app_web/components/intent-concepts.component.js"></script>
+	<script type="text/javascript" src="app_web/controllers/input-output.js"></script>
+	<script type="text/javascript" src="app_web/services/ajax.js"></script>
+	<script type="text/javascript" src="app_web/services/state.js"></script>	
+  <script type="text/javascript" src="app_web/services/asr.js"></script>
+	<script type="text/javascript" src="app_web/services/dialog.js"></script>
+
+
+  </body>
+</html>

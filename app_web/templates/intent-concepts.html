@@ -1,0 +1,7 @@
+
+  <md-chips ng-model="$ctrl.list" md-removable="true" md-on-remove="$ctrl.onRemoved($chip);" readonly="true" layout="column">
+    <md-chip-template>
+      <strong>{{$chip[0]}}</strong>
+      <em>({{$chip[1]}})</em>
+    </md-chip-template>
+  </md-chips>
